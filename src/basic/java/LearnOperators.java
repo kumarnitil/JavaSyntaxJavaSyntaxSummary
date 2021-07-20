@@ -47,6 +47,37 @@ public class LearnOperators {
 		System.out.println("The result of /= on variable with value of comp4 is "+ comp4);
 		comp5 %= 10;
 		System.out.println("The result of %= on variable with value of comp5 is "+ comp5);
+		
+		//Operator Precedence are defined below
+		/*
+		 * The following are the Operator precedence in the order of their definition
+		 * 1.> Postfix X++ or X--
+		 * 2.> Prefix  ++X or --X
+		 * 3.> Multiplicative (*  /  % )
+		 * 4.> Additive ( +  - )
+		 * 
+		 * Operators of equal precedence are evaluated from left to right.
+		 * Precedence can be overwritten by using parenthesis.
+		 * Nested parenthesis are evaluated from inside out.
+		 * 
+		 */
+		
+		int valA = 21, valB = 6, valC = 3, valD = 1;
+		// The / will have a higher precedence than -.
+		int result1 = valA - valB / valC;
+		// The precedence is overcome by using parenthesis
+		int result2 = (valA - valB) / valC;
+
+		System.out.println("The / will have a higher precedence than - and the result is "+result1);
+		System.out.println("The precedence is overcome by using parenthes and the result is "+result2);
+
+		//The / and * are having the same precedence and are evaluated from left to right.
+		int result3 = valA / valC * valD + valB;
+		//Nested parenthesis are evaluated from inside out.
+		int result4 = valA / (valC * (valD + valB));
+
+		System.out.println("The / and * are having the same precedence and are evaluated from left to right and the result is "+result3);
+		System.out.println("Nested parenthesis are evaluated from inside out. and the result is "+result4);
 	}
 
 }
