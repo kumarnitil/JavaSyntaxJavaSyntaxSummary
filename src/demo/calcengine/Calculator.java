@@ -1,6 +1,6 @@
 package demo.calcengine;
 
-public class calculator {
+public class Calculator {
 
     /*
      * Creation of simple calculator which would do

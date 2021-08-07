@@ -1,6 +1,6 @@
 package demo.calcengine;
 
-public class CalculatorUsingArrays {
+public class ClaculatorUsingArrays {
 
     public static void main(String[] args) {
         double[] leftval = {100.0d, 200.0d, 300.0d, 400.0d};

@@ -1,4 +1,4 @@
-package basic.java;
+package basics.java;
 
 public class LearnStringFormatting {
 
