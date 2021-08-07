@@ -20,7 +20,7 @@ public class LearnBlockandSwitch {
 	 */
 
 	public static void main(String[] args) {
-		//Refer to demo.calcengine.calculator.java to see the demo of block statement.
+		//Refer to basics.java.VariableDataTypes.calculator.java to see the demo of block statement.
 		//Refer to demo.calcengine.CalculatorUsingSwitch.java to see the demo of switch statement
 
 	}
