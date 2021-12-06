@@ -22,7 +22,7 @@ public class CalculatorUsingMethods {
         	System.out.println("Invalid number of arguments provided");
 
 	}
-	
+	//adding comment to verify
 	static double execute (char opscode, double leftval, double rightval) {
 		double result;
 		switch (opscode) {
