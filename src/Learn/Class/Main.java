@@ -3,60 +3,61 @@ package Learn.Class;
 public class Main {
 
     public static void main(String[] args) {
-        double[] leftval = {100.0d, 200.0d, 300.0d, 400.0d};
-        double[] rightval = {50.0d, 100.0d, 150.0d, 200.0d};
-        char[] opcode = {'a','s','m','d'};
-        double[] result = new double[opcode.length];
+        performCalculations();
+        /*
+        Understanding Classes and reference types
+        Whenever an object is created it creates a reference in the memory which will store the contents which has been defined in the class
+        flight2 = flight1 when we do this like make one object equals other then flight2 will also start pointing to the same
+        memory location which flight1 was pointing.
+        */
 
-        if(args.length == 0) {
-            for(int i=0;i<opcode.length;i++) {
-                result[i] = execute(opcode[i], leftval[i], rightval[i]);
-            }
-            System.out.println("The results are");
-            for(double finalresult :result)
-                System.out.println(finalresult);
+        Flight flight1 = new Flight();
+        Flight flight2 = new Flight();
+
+        flight2.add1passenger();
+        System.out.println(flight2.passengers);
+        flight2 = flight1;
+        System.out.println(flight2.passengers);
+        flight1.add1passenger();
+        flight1.add1passenger();
+        System.out.println(flight2.passengers);
+    }
+    static void performCalculations() {
+        MathEquation[] equations = new MathEquation[4];
+        /*
+        When we make the declaration
+        MathEquation[] equations = new MathEquation[4];
+        Here we are creating an Array of MathEquation references.
+        thus we are not declaring four instances of the MathEquation Class
+        instead I will create four reference of the types MathEquation
+        Each of this element inside this array will specifically need to create an instance of the Math equation class
+        Thus originally the following declaration will follow
+        post - MathEquation[] equations = new MathEquation[4];
+        equations[0] = new MathEquation();
+        equations[0].leftVal = 100.0d;
+        equations[0].rightVal = 50.0d;
+        equations[0].opCode = 'd';
+         */
+        equations[0] = create(100.0d, 50.0d, 'd');
+        equations[1] = create(25.0d, 92.0d, 'a');
+        equations[2] = create(225.0d, 17.0d, 's');
+        equations[3] = create(11.0d, 3.0d, 'm');
+
+        for(MathEquation equation : equations){
+            equation.execute();
+            System.out.println("results = "+ equation.result);
         }
-        else if(args.length == 3)
-            commandlinehandler(args);
-        else
-            System.out.println("Invalid number of arguments provided");
 
-    }
-    //adding comment to verify
-    static double execute (char opscode, double leftval, double rightval) {
-        double result;
-        switch (opscode) {
-            case 'a':
-                result = leftval+rightval;
-                break;
-            case 's':
-                result = leftval-rightval;
-                break;
-            case 'm':
-                result = leftval*rightval;
-                break;
-            case 'd':
-                result = rightval != 0?leftval/rightval:0.0d;
-                String finalstat = (result == 0.0d?"not divisble":"divisible");
-                System.out.println("The values are "+finalstat);
-                /*
-                 * An example of conditional assignment instead of nesting if inside case statement
-                 */
-                break;
-            default:
-                System.out.println("Invalid Opcode "+opscode);
-                result = 0.0d;
-                break;
-        }
-        return result;
 
     }
 
-    public static void commandlinehandler(String[] args) {
-        char opscode = args[0].charAt(0);
-        double leftval = Double.parseDouble(args[1]);
-        double rightval = Double.parseDouble(args[2]);
-        System.out.printf("The sum of %f and %f are   ",leftval,rightval);
-        System.out.println(execute(opscode,leftval,rightval));
+    private static MathEquation create(double leftVal, double rightVal, char opCode) {
+        MathEquation equation = new MathEquation();
+        equation.leftVal = leftVal;
+        equation.rightVal = rightVal;
+        equation.opCode = opCode;
+        return equation;
     }
+
+
 }
