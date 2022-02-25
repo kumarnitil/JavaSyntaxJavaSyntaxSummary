@@ -24,6 +24,7 @@ public class LearnOperators {
 		System.out.println("The result of modulus of decimans is also remainder and converted to decimal like 10.0%6.0 will give"+var4);
 		
 		//postfix and prefix operators are ++ and --
+		//adding coming to verify
 		int var5 = 10, var6 = 10;
 		System.out.println("The preincrement opeator will give increase the value by 1 and then assign and the result is "+ ++var5);
 		System.out.println("The postincrement opeator will first assign value and then increment by 1 and the result is "+ var6++);
