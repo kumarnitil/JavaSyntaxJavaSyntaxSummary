@@ -39,5 +39,27 @@ public class LearnString {
         String result = x + "+" + y;//Implicit conversion since "+" is used, then the conversion is implicit.
         System.out.println(result);
 
+        /*
+        StringBuilder is a class which gives you ways to create a string in a mutable format
+        We can use String builder to construct a string
+        We can append string values at the end of the string in string builder class
+        We can also insert values at the middle of the string in the StringBuilder Class
+         */
+
+        StringBuilder Sb1 = new StringBuilder(40);
+        //Declared StringBuilder object Sb1 with the capacity of 40
+        Sb1.append("I am");
+        Sb1.append(" Kumar Nitil");
+        String intro = Sb1.toString();
+        System.out.println(intro);
+        //trying to insert the element in the middle of the string
+        int position = Sb1.indexOf(" Kumar");
+        Sb1.insert(position, " the only ");
+        intro = Sb1.toString();
+        System.out.println(intro);
+        position = Sb1.indexOf(" Kumar");
+        Sb1.insert(position, 11);
+        intro = Sb1.toString();
+        System.out.println(intro);
     }
 }
